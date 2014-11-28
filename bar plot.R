@@ -17,14 +17,15 @@ min<-c(0)
 max<-c(.85)
 
 # Achsen
-mp<-barplot(A, border=NA,axes=FALSE,axisnames=TRUE,cex=1.5, col=c("grey70","grey20"),ylim=c(min,max))
-mtext(side=2,line=2.5,"weber fractions", cex=0.9)
+mp<-barplot(A, border=NA,axes=FALSE,axisnames=FALSE, col=c("grey70","grey20"),ylim=c(min,max))
+mtext(side=2,line=2.5,"weber fractions", cex=1.2)
+mtext(side=1,line=1,"visual      auditiv", cex=1.2)
 abline(h=0)
 
 x.text<-colMeans(mp)
 text(c("***"),x=x.text,y=0.81, cex=2)
 
-mtext(side=3,line=2,expression(paste(bold("A  "),"Subsecond range")),cex=1,at=0.4)
+mtext(side=3,line=2,expression(paste(bold("A  "),"Subsecond range")),cex=1.2,at=0.6)
 abline(h=0)
 axis(2,pos=0.15,at=seq(0,.85, by=.20))
 
@@ -39,13 +40,15 @@ segments(mp,A - stA, mp, A + stA, lwd=2)
 
 #B
 # Achsen
-mp<-barplot(B, border=NA,axes=FALSE,axisnames=TRUE, col=c("grey 70","grey 20"),ylim=c(min,max))
+mp<-barplot(B, border=NA,axes=FALSE,axisnames=FALSE, col=c("grey 70","grey 20"),ylim=c(min,max))
 abline(h=0)
+mtext(side=1,line=1,"visual      auditiv", cex=1.2)
+
 
 x.text<-colMeans(mp)
 text(c("***"),x=x.text,y=0.30, cex=2)
 
-mtext(side=3,line=2,expression(paste(bold("B  "),"Second range")),cex=1,at=0.2)
+mtext(side=3,line=2,expression(paste(bold("B  "),"Second range")),cex=1.2,at=0.2)
 abline(h=0)
 axis(2,pos=0.15,labels=FALSE,at=seq(0,.85, by=.20))
 
@@ -56,13 +59,14 @@ segments(mp,B - stB, mp, B + stB, lwd=2)
 
 #C
 # Achsen
-mp<-barplot(C, border=NA,axes=FALSE,axisnames=TRUE, col=c("grey 70","grey 20"),ylim=c(min,max))
+mp<-barplot(C, border=NA,axes=FALSE,axisnames=FALSE, col=c("grey 70","grey 20"),ylim=c(min,max))
 abline(h=0)
+mtext(side=1,line=1,"visual      auditiv", cex=1.2)
 
 x.text<-colMeans(mp)
-text(c("NS"),x=x.text,y=0.3, cex=1)
+text(c("NS"),x=x.text,y=0.3, cex=1.5)
 
-mtext(side=3,line=2,expression(paste(bold("C  "),"Second range adjusted means")),cex=1,at=0.2)
+mtext(side=3,line=2,expression(paste(bold("C  "),"Second range \nadjusted means"),cex=1.2,at=0.2))
 abline(h=0)
 axis(2,pos=0.15,labels=FALSE,at=seq(0,.85, by=.20))
 
